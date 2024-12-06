@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="text-start" scope="col">Stock</th>
+                <th class="text-end" scope="col">Current Price</th>
+                <th scope="col">Number of Shares</th>
+                <th scope="col">Value of Holdings</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in portfolio %}
+                <tr>
+                    <td class="text-start">{{ stock["stock"] }}</td>
+                    <td class="text-end">{{ stock["price"] | usd }}</td>
+                    <td class="text-end">{{ stock["shares"] }}</td>
+                    <td class="text-end">{{ stock["holdings"] | usd }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td class="text-start">stocktest</td>
+                <td class="text-end">$28.00</td>
+                <td class="text-end">4</td>
+                <td class="text-end">$112.00</td>
+            </tr>
+            <tr>
+                <td class="text-end" colspan="3">Cash</td>
+                <td class="text-end">{{ cash | usd }}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+              <td class="text-end" colspan="3"><b>Grand Total</b></td>
+              <td class="text-end"><b>{{ grandtotal | usd }}</b></td>
+            </tr>
+          </tfoot>
+    </table>
+
+{% endblock %}

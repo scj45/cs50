@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    HISTORY
+{% endblock %}
+
+{% block main %}
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="text-start" scope="col">Stock</th>
+                <th class="text-end" scope="col">Symbol</th>
+                <th class="text-end" scope="col">Purchase/Sale Price</th>
+                <th class="text-end" scope="col">Number of Shares</th>
+                <th class="text-end" scope="col">Value of Holdings</th>
+                <th class="text-end" scope="col">Action</th>
+                <th class="text-end" scope="col">Date/Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in portfolio %}
+                <tr>
+                    <td class="text-start">{{ stock["stock"] }}</td>
+                    <td class="text-end">{{ stock["symbol"] }}</td>
+                    <td class="text-end">{{ stock["price"] | usd }}</td>
+                    <td class="text-end">{{ stock["shares"] }}</td>
+                    <td class="text-end">{{ stock["holdings"] | usd }}</td>
+                    <td class="text-end">{{ stock["action"] }}</td>
+                    <td class="text-end">{{ stock["time"] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

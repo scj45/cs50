@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell Shares
+{% endblock %}
+
+{% block main %}
+    <form action="/sell" method="post">
+        <label for="shares">Choose shares:</label>
+
+        <div class="form-group">
+            <select name="symbol" id="symbol" placeholder="select stock" required>
+                {% for stock in portfolio %}
+                    <option value="{{ stock["symbol"] }}">{{ stock["symbol"] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="shares" placeholder="Shares" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,21 @@
+HTML tags
+1. <div>
+2. <button>
+3. <dd>
+4. <script>
+5. <p>
+6. <a>
+7. <img>
+8. <q>
+9. <meta>
+10. <dl>
+
+CSS properties
+1. font-family
+2. background-color
+3. float
+4. text-align
+5. margin
+
+Javascript and Bootstrap
+Used bootstrap to make responsive webpage sensitive to device size. Used Javascript to make buttons change color and show feedback.

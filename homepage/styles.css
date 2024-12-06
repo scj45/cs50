@@ -1,0 +1,91 @@
+body {
+    background-color: Linen;
+    color: LightSeaGreen;
+    font-family: 'Georgia';
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 35px 70px 50px 90px;
+    text-align: left;
+}
+
+/* make a top navigation bar */
+.menu {
+    overflow: hidden;
+    background-color: LightSalmon;
+  }
+
+.menu a {
+    float: left;
+    color: MidnightBlue;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.menu a:hover {
+    background-color: Salmon;
+    color: MidnightBlue;
+}
+
+/* right-aligned (split) link inside the menu bar */
+.menu a.split {
+    float: right;
+    background-color: PeachPuff;
+    color: MidnightBlue;
+}
+
+.menu a.split:hover {
+    background-color: LightSalmon;
+    color: MidnightBlue;
+}
+
+.container {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.header {
+    background-color: LightSeaGreen;
+    color: BlanchedAlmond;
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Georgia', serif;
+    font-size: 48px;
+}
+
+
+.footer {
+    text-align: left;
+    padding: 3px;
+    background-color: LightSeaGreen;
+    color: BlanchedAlmond;
+}
+
+/* center images */
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button, input[type="submit"] {
+
+    background-color: Plum;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 0.375rem 0.75rem;
+    text-align: center;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    vertical-align: middle;
+}
