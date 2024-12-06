@@ -1,0 +1,14 @@
+-- characterise audio aura (avg energy, valence, and danceability)
+
+SELECT AVG(energy)
+FROM songs;  -- 0.65906
+
+SELECT AVG(valence)
+FROM songs; --0.484443
+
+SELECT AVG(danceability)
+FROM songs; -- 0.71646
+
+I would characterize their aura as purple and orange: their top 100 songs have high average energy and danceability
+
+Only having six auras is very limiting, forcing listeners to fall into two of six groups (that's a whole third of the options...). It is much more likely that listeners fall into other 'moods' of music too. Moreover, an average of energy, valence and danceability is not a good representation of music aura, as one listener who likes the extremes of these parameters may not enjoy music which falls in between high and low values of these parameters. Using a mode instead of a mean may be better, or basing the 'aura' on genre.

@@ -1,0 +1,39 @@
+{% extends "template.html" %}
+
+{% block title %}
+    Browse
+{% endblock %}
+
+{% block main %}
+    <div>
+        <table action="/browse" id="browse" method="post">
+            <tr>
+                <th class="text-start" scope="col">Title</th>
+                <th class="text-start" scope="col" colspan="2">Author</th>
+                <th class="text-start" scope="col">Publishing Year</th>
+                <th class="text-start" scope="col">Edition</th>
+                <th class="text-start" scope="col">No. of Copies</th>
+                <th class="text-start" scope="col">Genre</th>
+                <th class="text-start" scope="col">Topics</th>
+                </tr>
+            {% for book in books %}
+                <tr>
+                    <td>{{ book["title"] }}</td>
+                    <td>{{ book["authorfirstname"] }}</td>
+                    <td>{{ book["authorlastname"] }}</td>
+                    <td>{{ book["year"] }}</td>
+                    <td>{{ book["edition"] }}</td>
+                    <td>{{ book["copies"] }}</td>
+                    <td>{{ book["genre"] }}</td>
+                    <td>
+                        <ul class="no-bullets">
+                            <li>{{ book["topicsA"] }}</li>
+                            <li>{{ book["topicsB"] }}</li>
+                            <li>{{ book["topicsC"] }}</li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

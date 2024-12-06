@@ -1,0 +1,38 @@
+CREATE TABLE books (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    title text not null,
+    year year,
+    edition integer,
+    copies integer,
+    genre TEXT,
+    topicsA TEXT,
+    topicsB TEXT,
+    topicsC TEXT, authorfirstname TEXT, authorlastname TEXT,
+    unique(id)
+);
+CREATE TABLE sqlite_sequence(name,seq);
+CREATE TABLE reader (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    username text not null,
+    firstname text not null,
+    lastname text not null,
+    hash TEXT NOT NULL, email email, phoneno TEXT,
+    unique(id)
+);
+CREATE TABLE finished (
+    bookid integer not null,
+    title text not null,
+    readerid integer not null,
+    rating integer not null, timestamp timestamp, authorfirstname TEXT, authorlastname TEXT,
+    foreign key (bookid) references books(id),
+    foreign key (readerid) references reader(id)
+);
+CREATE TABLE IF NOT EXISTS "history" (
+    bookid INTEGER NOT NULL,
+    title TEXT,
+    readerid INTEGER NOT NULL,
+    action TEXT,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (bookid) REFERENCES books(id),
+    FOREIGN KEY (readerid) REFERENCES reader(id)
+);

@@ -1,0 +1,28 @@
+{% extends "template.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+    <div style="overflow-x:auto" class="fullHeight">
+        <table>
+            <tr>
+                <th class="text-start" scope="col">Book ID</th>
+                <th class="text-start" scope="col">Title</th>
+                <th class="text-start" scope="col">Action</th>
+                <th class="text-start" scope="col">Timestamp</th>
+            </tr>
+            {% for entry in history %}
+                <tr>
+                    <td>{{ entry["bookid"] }}</td>
+                    <td>{{ entry["title"] }}</td>
+                    <td>{{ entry["action"] }}</td>
+                    <td>{{ entry["timestamp"] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "template.html" %}
+
+{% block title %}
+    Search Results
+{% endblock %}
+
+{% block main %}
+    <table id="results" class="fullHeight" method="post">
+        <tr>
+            <th class="text-start" scope="col">Title</th>
+            <th class="text-start" scope="col" colspan="2">Author</th>
+            <th class="text-start" scope="col">Publishing Year</th>
+            <th class="text-start" scope="col">Edition</th>
+            <th class="text-start" scope="col">No. of Copies</th>
+            <th class="text-start" scope="col">Genre</th>
+            <th class="text-start" scope="col">Topics</th>
+        </tr>
+        {% for result in results %}
+            <tr>
+                <td>{{ result["title"] }}</td>
+                <td>{{ result["authorfirstname"] }}</td>
+                <td>{{ result["authorlastname"] }}</td>
+                <td>{{ result["year"] }}</td>
+                <td>{{ result["edition"] }}</td>
+                <td>{{ result["copies"] }}</td>
+                <td>{{ result["genre"] }}</td>
+                <td>
+                    <ul>
+                        <li>{{ result["topicsA"] }}</li>
+                        <li>{{ result["topicsB"] }}</li>
+                        <li>{{ result["topicsC"] }}</li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+

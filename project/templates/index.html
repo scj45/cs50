@@ -1,0 +1,26 @@
+{% extends "template.html" %}
+
+{% block main %}
+
+    <div style="overflow-x:auto" class="fullHeight">
+         <table>
+            <tr>
+                <th class="text-start" scope="col">Title</th>
+                <th class="text-start" scope="col" colspan="2">Author</th>
+                <th class="text-start" scope="col">Year</th>
+                <th class="text-start" scope="col">Edition</th>
+            </tr>
+            {% for row in latest %}
+                <tr>
+                    <td>{{ row["title"] }}</td>
+                    <td>{{ row["authorfirstname"] }}</td>
+                    <td>{{ row["authorlastname"] }}</td>
+                    <td>{{ row["year"] }}</td>
+                    <td>{{ row["edition"] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}
+
